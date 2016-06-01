@@ -53,10 +53,10 @@ const webScrapeController = {
         return {
           name: $(elem).find('h2').html(),
           dataPlan: $(elem).find('.font-600').eq(2).html(),
-          dataSize: $(elem).find('.font-600').eq(2).html().replace(/[A-Za-z]+/g,''),
+          dataSize: Number($(elem).find('.font-600').eq(2).html().replace(/[A-Za-z]+/g,'')),
           contractPlan: $(elem).find('.mar-y-3 strong').html(),
           price: $(elem).find('li.c-gray.font-5.visible-xs').find('strong').html(),
-          priceNum: $(elem).find('li.c-gray.font-5.visible-xs').find('strong').html().replace(/[^0-9]+/g,''),
+          priceNum: Number($(elem).find('li.c-gray.font-5.visible-xs').find('strong').html().replace(/[^0-9]+/g,'')),
           carrier: carrierName
         };
       });

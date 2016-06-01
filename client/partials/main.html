@@ -1,14 +1,15 @@
 <h1 class="md-padding" ng-cloak>{{title}}</h1>
 <br/>
-<label for="filterby"> Filter By: </label><br>
 
-<select name="filterby" ng-model="filterby">
+<label for="sorter"> Sort By: </label>
+<select name="sorter" ng-model="sorter">
+  <option value="">None</option>
   <option value="priceNum">Price Low - High</option>
   <option value="-priceNum">Price High - Low</option>
   <option value="dataSize">Data Plan Size Low - High</option>
   <option value="-dataSize">Data Plan Size High - Low</option>
 </select>
-
+<label for="contractType"> Filter By Contract Type: </label>
 <select name="contractType" ng-model="contractType">
   <option value="">All</option>
   <option value="Prepaid">Prepaid</option>
@@ -23,6 +24,7 @@
     <md-option value="vzw">Verizon</md-option>
   </md-select>
 </md-input-container> -->
+<label for="carrierName"> Filter By Carrier: </label>
 <select name="carrierName" ng-model="carrierName">
   <option value="">All</option>
   <option value="tmo">T-Mobile</option>
@@ -31,4 +33,4 @@
 </select>
 <br/>
 
-<plan-block ng-repeat='plan in plans | orderBy: filterby | filter: contractType | filter: carrierName'></plan-block>
+<plan-block ng-repeat='plan in plans | orderBy: sorter | filter: contractType | filter: carrierName'></plan-block>

@@ -3,7 +3,7 @@ var app = angular
     'ngRoute', //'ngMaterial',
     'cellcompare.MainController',
     'cellcompare.DataFactory',
-    'cellcompare.PlanBlock',
+    'cellcompare.planBlock',
   ]);
 
 app.config(['$routeProvider', '$locationProvider', configFunction]);
