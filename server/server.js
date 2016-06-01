@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const webScaperController = require('./scraper');
+const webScraperController = require('./scraper');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
@@ -14,9 +14,9 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../client/')));
 
-app.get('/data', webScaperController.getVZWData);//, webScaperController.getVZWData, , webScaperController.combineCellPlanData, function(req, res) {
-  //res.render('./../client/signup', {error: null});
-//});
+app.get('/data', webScraperController.getTMOBILEData, webScraperController.getVZWData, webScraperController.getATTData, (req, res) => {
+  res.send(webScraperController.data);
+});
 
 app.get('*', function(req, res) {
     res.sendFile(path.resolve('../cellcompare/client/index.html')); // load the single view file (angular will handle the page changes on the front-end)

@@ -6,7 +6,7 @@ angular
 function MainController($scope, DataFactory) {
   $scope.title = "Compare Cell Phone Plans";
   DataFactory.fetch().then(results => {
-    console.log(results.data);
+    //console.log(results.data);
     $scope.plans = results.data;
   });
   $scope.sorter = '';
