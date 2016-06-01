@@ -1,0 +1,21 @@
+<h1>Compare Cell Phone Plans</h1>
+<br/>
+<label for="filterby"> Filter By: </label><br>
+  <select name="filterby" ng-model="filterby">
+    <option value="created_by">Username - Ascending</option>
+    <option value="-created_by">Username - Descending</option>
+    <option value="created_at">Time Posted - Ascending</option>
+    <option value="-created_at">Time Posted - Descending</option>
+    <option value="message">Message Body Content - Ascending</option>
+    <option value="-message">Message Body Content - Descending</option>
+    <option value="message.length">Message Body Size - Ascending</option>
+    <option value="-message.length">Message Body Size - Descending</option>
+  </select>
+<br>
+<input type="text" ng-model='searchTerm'></input>
+<br/>
+<button type="submit" ng-click="search()">Search</button>
+<br/>
+<p ng-repeat='message in messages | orderBy: filterby | filter: searchTerm' style="text-align: left; margin-left: 15%; color: blue;">
+	{{message.created_by}} wrote: {{message.message}}
+</p>
