@@ -1,3 +1,11 @@
 body {
-  background-color: blue;
+  background-color: orange;
+}
+
+.hidden {
+  display: none;
+}
+
+.planContainer {
+  border: 1px solid black;
 }

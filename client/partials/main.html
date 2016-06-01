@@ -1,12 +1,14 @@
 <h1 class="md-padding" ng-cloak>{{title}}</h1>
 <br/>
 <label for="filterby"> Filter By: </label><br>
-  <select name="filterby" ng-model="filterby">
-    <option value="priceNum">Price Low - High</option>
-    <option value="-priceNum">Price High - Low</option>
-    <option value="dataSize">Data Plan Size Low - High</option>
-    <option value="-dataSize">Data Plan Size High - Low</option>
-  </select>
+
+<select name="filterby" ng-model="filterby">
+  <option value="priceNum">Price Low - High</option>
+  <option value="-priceNum">Price High - Low</option>
+  <option value="dataSize">Data Plan Size Low - High</option>
+  <option value="-dataSize">Data Plan Size High - Low</option>
+</select>
+
 <select name="contractType" ng-model="contractType">
   <option value="">All</option>
   <option value="Prepaid">Prepaid</option>
@@ -27,8 +29,6 @@
   <option value="att">AT&T</option>
   <option value="vzw">Verizon</option>
 </select>
-<!-- <button type="submit" ng-click="search()">Search</button>
-<br/> -->
-<!-- <p ng-repeat='message in messages | orderBy: filterby | filter: contractType | filter: carrierName' style="text-align: left; margin-left: 15%; color: blue;">
-	{{message.created_by}} wrote: {{message.message}}
-</p> -->
+<br/>
+
+<plan-block ng-repeat='plan in plans | orderBy: filterby | filter: contractType | filter: carrierName'></plan-block>

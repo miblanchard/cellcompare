@@ -1,3 +1,4 @@
+/*jshint multistr: true */
 angular
 	.module('cellcompare.PlanBlock', ['ngRoute'])
   .directive('PlanBlock', planBlock);
@@ -5,6 +6,10 @@ angular
 function planBlock () {
 	return {
     	restrict: 'E',
-      template: '<li> <h3>{{user.name}}</h3> is cool</li>'
+      template: '<div class="planContainer">\
+                  <div>{{plan.name}}</div>\
+                  <p>{{plan.dataPlan}}</p><p>{{plan.price}}</p></br>\
+                  <div class="hidden">{{plan.priceNum}}{{plan.dataSize}}{{plan.carrier}}{{plan.contractType}}</div>\
+                </div>'
     };
 }
