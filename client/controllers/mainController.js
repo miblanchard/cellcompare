@@ -1,12 +1,14 @@
 angular
-  .module('cellcompare.MainController', ['ngRoute'])
-	.controller('MainController', ["$scope", MainController]);
+  .module('cellcompare.MainController', ['ngRoute','cellcompare.DataFactory'])
+	.controller('MainController', ["$scope", "DataFactory", MainController]);
 
 
-function MainController($scope) {
+function MainController($scope, DataFactory) {
   $scope.title = "Compare Cell Phone Plans";
-  //$scope.name = UserFactory.name;
-  //MessageFactory.fetch().then(results => $scope.messages = results.data);
+  DataFactory.fetch().then(results => {
+    console.log(results.data);
+    $scope.plans = results.data;
+  });
   $scope.filterby = '';
   $scope.contractType = '';
   $scope.carrierName = '';
