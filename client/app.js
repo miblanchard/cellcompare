@@ -7,7 +7,6 @@ var app = angular
 app.config(configFunction);
 
 function configFunction($routeProvider, $locationProvider) {
-
   $routeProvider
     .when('/', {
       templateUrl: './partials/main.html',

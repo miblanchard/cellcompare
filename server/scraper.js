@@ -16,7 +16,7 @@ const webScrapeController = {
     //console.log(dataOutput);
     // res.writeHead(200, {'Content-Type': 'application/json',});
     // res.send('final output');
-    next();
+    //next();
   },
 
   getATTData: (req, res, next) => {
@@ -24,19 +24,19 @@ const webScrapeController = {
     webScrapeController.getCarrierData(req, res, attUrl, next, 'att');
     //console.log('inside att');
     //console.log('att', webScrapeController.data);
-    next();
+    //next();
   },
 
   getVZWData: (req, res, next) => {
     let vzwUrl = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=500&data=200&supplier=Verizon-Wireless&network=8';
     webScrapeController.getCarrierData(req, res, vzwUrl, next, 'vzw')
-    next();
+    //next();
   },
 
   getTMOBILEData: (req, res, next) => {
     let tmoURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=-1&data=200&supplier=T-Mobile&network=6';
     webScrapeController.getCarrierData(req, res, tmoURL, next, 'tmo');
-    next();
+    //next();
   },
 
   getCarrierData: (req, res, url, next, carrierName) => {
@@ -56,7 +56,8 @@ const webScrapeController = {
           dataSize: $(elem).find('.font-600').eq(2).html().replace(/[A-Za-z]+/g,''),
           contractPlan: $(elem).find('.mar-y-3 strong').html(),
           price: $(elem).find('li.c-gray.font-5.visible-xs').find('strong').html(),
-          //priceNum: $(elem).find('.font-600').eq(2).html().replace(/[^0-9]+/g,''),
+          priceNum: $(elem).find('li.c-gray.font-5.visible-xs').find('strong').html().replace(/[^0-9]+/g,''),
+          carrier: carrierName
         };
       });
       res.send(carrierData);
