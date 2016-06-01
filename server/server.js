@@ -11,12 +11,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-//root route is where all the fun will happen
-// app.get('/', function(req, res) {
-//   console.log('GET to root');
-//   res.send('Data response');
-// });
-app.get('/', webScaperController.getATTData);//, webScaperController.getVZWData, webScaperController.combineCellPlanData, function(req, res) {
+app.get('/', webScaperController.getTMOBILEData);//, webScaperController.getVZWData, , webScaperController.combineCellPlanData, function(req, res) {
   //res.render('./../client/signup', {error: null});
 //});
 
