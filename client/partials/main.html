@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-
-  <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
-  <script type="text/javascript" src="./lib/angular-route/angular-route.min.js"></script>
-  <script type="text/javascript" src="./controllers/mainController.js"></script>
-  <script type="text/javascript" src="./controllers/aboutController.js"></script>
-  <script type="text/javascript" src="./app.js"></script>
-
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body ng-app='myApp'>
-  <!--Notice the link with the octothorpe first-->
-  <!--Our templates are rendered here-->
-  <div class="container" ng-view></div>
-
-
-<h1 class="md-padding" ng-cloak>Compare Cell Phone Plans</h1>
+<h1 class="md-padding" ng-cloak>{{title}}</h1>
 <br/>
 <label for="filterby"> Filter By: </label><br>
   <select name="filterby" ng-model="filterby">
@@ -28,14 +7,12 @@
     <option value="dataSize">Data Plan Size Low - High</option>
     <option value="-dataSize">Data Plan Size High - Low</option>
   </select>
-<br>
 <select name="contractType" ng-model="contractType">
   <option value="">All</option>
   <option value="Prepaid">Prepaid</option>
   <option value="No Contract">No Contract</option>
 </select>
-<br/>
-<md-input-container>
+<!-- <md-input-container>
   <label>Carrier Name</label>
   <md-select ng-model="carrierName">
     <md-option value="">All</md-option>
@@ -43,17 +20,15 @@
     <md-option value="att">AT&T</md-option>
     <md-option value="vzw">Verizon</md-option>
   </md-select>
-</md-input-container>
-<!-- <select name="carrierName" ng-model="carrierName">
+</md-input-container> -->
+<select name="carrierName" ng-model="carrierName">
   <option value="">All</option>
   <option value="tmo">T-Mobile</option>
   <option value="att">AT&T</option>
   <option value="vzw">Verizon</option>
-</select> -->
+</select>
 <!-- <button type="submit" ng-click="search()">Search</button>
 <br/> -->
 <!-- <p ng-repeat='message in messages | orderBy: filterby | filter: contractType | filter: carrierName' style="text-align: left; margin-left: 15%; color: blue;">
 	{{message.created_by}} wrote: {{message.message}}
 </p> -->
-</body>
-</html>

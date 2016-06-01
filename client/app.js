@@ -1,10 +1,10 @@
 var app = angular
-  .module('myApp', [
-    'ngRoute',
+  .module('cellcompare', [
+    'ngRoute', //'ngMaterial',
     'cellcompare.MainController'
   ]);
 
-app.config(configFunction);
+app.config(['$routeProvider', '$locationProvider', configFunction]);
 
 function configFunction($routeProvider, $locationProvider) {
   $routeProvider
