@@ -14,7 +14,8 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../client/')));
 
-app.get('/data', webScraperController.getTMOBILEData, webScraperController.getVZWData, webScraperController.getATTData, (req, res) => {
+app.get('/data', webScraperController.getTMOBILEData, webScraperController.getVZWData, webScraperController.getATTData, webScraperController.getSprintData, (req, res) => {
+  // console.log(webScraperController.data);
   res.send(webScraperController.data);
 });
 

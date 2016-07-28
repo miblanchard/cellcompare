@@ -1,6 +1,7 @@
 var app = angular
   .module('cellcompare', [
-    'ngRoute', //'ngMaterial',
+    'ngRoute',
+    'ngMaterial',
     'cellcompare.MainController',
     'cellcompare.DataFactory',
     'cellcompare.planBlock',

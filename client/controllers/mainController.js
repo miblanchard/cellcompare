@@ -1,12 +1,16 @@
 /*jshint multistr: true */
 angular
-  .module('cellcompare.MainController', ['ngRoute','cellcompare.DataFactory'])
+  .module('cellcompare.MainController', ['ngRoute', 'ngMaterial', 'cellcompare.DataFactory'])
 	.controller('MainController', ["$scope", "DataFactory", MainController]);
 
 function MainController($scope, DataFactory) {
   $scope.title = "Compare Cell Phone Plans";
   DataFactory.fetch().then(results => {
-    //console.log(results.data);
+    var node = document.getElementsByClassName('spinner')[0];
+    if (node.parentNode) {
+      node.parentNode.removeChild(node);
+    }
+    // console.log(results.data);
     $scope.plans = results.data;
   });
   $scope.sorter = '';
