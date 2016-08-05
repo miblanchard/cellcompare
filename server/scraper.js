@@ -1,8 +1,9 @@
+/* eslint arrow-body-style: 0, no-unused-vars: 0*/
 'use strict';
 
 const cheerio = require('cheerio');
 const request = require('request');
-const async = require("async");
+// const async = require("async");
 const Promise = require('promise');
 
 const webScrapeController = {
