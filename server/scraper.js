@@ -47,9 +47,7 @@ const webScrapeController = {
   getCarrierData: (req, res, url, next, carrierName) => {
     return new Promise((resolve, reject) => {
       request(url, (error, reqResponse, html) => {
-        if (error) {
-          console.log(error.message);
-        }
+        if (error) console.log(error.message);
         const $ = cheerio.load(html);
         $('.results-list')['0'].children
           .filter((elem) => ($(elem).find('h2').html()))
