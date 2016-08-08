@@ -19,11 +19,11 @@ app.get('/data', webScraperController.getTMOBILEData, webScraperController.getVZ
   res.send(webScraperController.data);
 });
 
-app.get('*', function(req, res) {
-    res.sendFile(path.resolve('../cellcompare/client/index.html')); // load the single view file (angular will handle the page changes on the front-end)
+app.get('*', (req, res) => {
+  // load the single view file (angular will handle the page changes on the front-end)
+  res.sendFile(path.resolve('../cellcompare/client/index.html'));
 });
 
 app.listen(4000, () => console.log('Listening on port 4000'));
 
 module.exports = app;
-//__dirname+'

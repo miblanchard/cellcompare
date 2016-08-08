@@ -3,9 +3,9 @@
 
 const cheerio = require('cheerio');
 const request = require('request');
-const bluebird = require('bluebird');
+const Promise = require('bluebird');
 // const async = require("async");
-const Promise = require('promise');
+// const Promise = require('promise');
 
 const webScrapeController = {
   data: [],
