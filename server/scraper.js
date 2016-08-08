@@ -71,6 +71,7 @@ const webScrapeController = {
                 } else if (size === 0) return Infinity;
                 return size;
               })(),
+              // TODO: Check for no contract and add/change to post-paid
               contractPlan: $(elem)
                 .find('.mar-y-3 strong')
                 .html(),
