@@ -1,4 +1,5 @@
-var app = angular
+/* eslint no-unused-vars: 0*/
+const app = angular
   .module('cellcompare', [
     'ngRoute',
     'ngMaterial',
