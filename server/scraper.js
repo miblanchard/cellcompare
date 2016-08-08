@@ -21,34 +21,6 @@ const webScrapeController = {
     promisesArray.push(webScrapeController.getCarrierData(req, res, sprintURL, next, 'Sprint'));
     Promise.all(promisesArray).then(() => next());
   },
-  // // route to request the AT&T plan data
-  // getATTData: (req, res, next) => {
-  //   const attURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=500&data=200&supplier=ATT&network=2';
-  //   webScrapeController.getCarrierData(req, res, attURL, next, 'AT&T').then((data) => {
-  //     next();
-  //   });
-  // },
-  // // route to request the Verizon plan data
-  // getVZWData: (req, res, next) => {
-  //   const vzwURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=500&data=200&supplier=Verizon-Wireless&network=8';
-  //   webScrapeController.getCarrierData(req, res, vzwURL, next, 'Verizon').then((data) => {
-  //     next();
-  //   });
-  // },
-  // // route to request the T-mobile plan data
-  // getTMOBILEData: (req, res, next) => {
-  //   const tmoURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=-1&data=200&supplier=T-Mobile&network=6';
-  //   webScrapeController.getCarrierData(req, res, tmoURL, next, 'T-Mobile').then((data) => {
-  //     next();
-  //   });
-  // },
-  // // route to request the Sprint plan data
-  // getSprintData: (req, res, next) => {
-  //   const sprintURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=-1&data=200&supplier=Sprint&network=4';
-  //   webScrapeController.getCarrierData(req, res, sprintURL, next, 'Sprint').then((data) => {
-  //     next();
-  //   });
-  // },
   /**
    * Loads the requested url into Cheerio then parses key plan details
    * @param  {Object} req - http request passed through middleware
@@ -108,3 +80,32 @@ const webScrapeController = {
 };
 
 module.exports = webScrapeController;
+
+// // route to request the AT&T plan data
+// getATTData: (req, res, next) => {
+//   const attURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=500&data=200&supplier=ATT&network=2';
+//   webScrapeController.getCarrierData(req, res, attURL, next, 'AT&T').then((data) => {
+//     next();
+//   });
+// },
+// // route to request the Verizon plan data
+// getVZWData: (req, res, next) => {
+//   const vzwURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=500&data=200&supplier=Verizon-Wireless&network=8';
+//   webScrapeController.getCarrierData(req, res, vzwURL, next, 'Verizon').then((data) => {
+//     next();
+//   });
+// },
+// // route to request the T-mobile plan data
+// getTMOBILEData: (req, res, next) => {
+//   const tmoURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=-1&data=200&supplier=T-Mobile&network=6';
+//   webScrapeController.getCarrierData(req, res, tmoURL, next, 'T-Mobile').then((data) => {
+//     next();
+//   });
+// },
+// // route to request the Sprint plan data
+// getSprintData: (req, res, next) => {
+//   const sprintURL = 'https://www.whistleout.com/Ajax/MobilePhones/SearchResults/SingleLineSearch?minutes=-1&sms=-1&data=200&supplier=Sprint&network=4';
+//   webScrapeController.getCarrierData(req, res, sprintURL, next, 'Sprint').then((data) => {
+//     next();
+//   });
+// },
