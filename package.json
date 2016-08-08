@@ -14,7 +14,6 @@
   "author": "Michael Blanchard",
   "license": "MIT",
   "dependencies": {
-    "babel": "^6.5.2",
     "body-parser": "^1.15.1",
     "bluebird": "3.4.1",
     "cheerio": "^0.19.0",
