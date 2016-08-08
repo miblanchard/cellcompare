@@ -5,12 +5,11 @@ const app = express();
 const cors = require('cors');
 const webScraperController = require('./scraper');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 const path = require('path');
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../client/')));
 
@@ -24,6 +23,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve('../cellcompare/client/index.html'));
 });
 
-app.listen(4000, () => console.log('Listening on port 4000'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 module.exports = app;

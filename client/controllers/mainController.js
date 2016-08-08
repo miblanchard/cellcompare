@@ -1,4 +1,3 @@
-/* jshint multistr: true */
 angular
   .module('cellcompare.MainController', ['ngRoute', 'ngMaterial', 'cellcompare.DataFactory'])
 	.controller('MainController', ['$scope', 'DataFactory', MainController]);
