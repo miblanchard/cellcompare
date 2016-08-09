@@ -1,5 +1,3 @@
-'use strict';
-
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -14,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client/')));
 
 app.get('/data', webScraperController.processCarrierData, (req, res) => {
-  // console.log(webScraperController.data);
   res.send(webScraperController.data);
 });
 app.get('*', (req, res) => {
@@ -25,10 +22,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 module.exports = app;
-
-// app.get('/data', webScraperController.getTMOBILEData,
-// webScraperController.getVZWData, webScraperController.getATTData,
-// webScraperController.getSprintData, (req, res) => {
-//   // console.log(webScraperController.data);
-//   res.send(webScraperController.data);
-// });
