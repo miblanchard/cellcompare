@@ -1,25 +1,24 @@
-'use strict';
-
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const webScaperController = require('./scraper');
+const webScraperController = require('./scraper');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+const path = require('path');
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
 
-//root route is where all the fun will happen
-// app.get('/', function(req, res) {
-//   console.log('GET to root');
-//   res.send('Data response');
-// });
-app.get('/', webScaperController.getATTData);//, webScaperController.getVZWData, webScaperController.combineCellPlanData, function(req, res) {
-  //res.render('./../client/signup', {error: null});
-//});
+app.use(express.static(path.join(__dirname, '../client/')));
 
-app.listen(4000, () => console.log('Listening on port 4000'));
+app.get('/data', webScraperController.processCarrierData, (req, res) => {
+  res.send(webScraperController.data);
+});
+app.get('*', (req, res) => {
+  // load the single view file (angular will handle the page changes on the front-end)
+  res.sendFile(path.resolve('../cellcompare/client/index.html'));
+});
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 module.exports = app;
