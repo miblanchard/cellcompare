@@ -1,5 +1,5 @@
 angular
-  .module('cellcompare.MainController', ['ngRoute', 'ngMaterial', 'cellcompare.DataFactory'])
+  .module('cellcompare.MainController', ['ngMaterial', 'cellcompare.DataFactory'])
 	.controller('MainController', ['$scope', 'DataFactory', MainController]);
 
 function MainController($scope, DataFactory) {

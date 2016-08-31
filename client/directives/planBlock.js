@@ -1,6 +1,6 @@
 /* jshint multistr: true */
 angular
-	.module('cellcompare.planBlock', ['ngRoute', 'ngMaterial'])
+	.module('cellcompare.planBlock', ['ngMaterial'])
   .directive('planBlock', planBlock);
 
 function planBlock() {

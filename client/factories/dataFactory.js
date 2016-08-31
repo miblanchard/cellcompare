@@ -1,5 +1,5 @@
 angular
-	.module('cellcompare.DataFactory', ['ngRoute'])
+	.module('cellcompare.DataFactory', [])
 	.factory('DataFactory', ['$http', dataFactory]);
 
 function dataFactory($http) {
